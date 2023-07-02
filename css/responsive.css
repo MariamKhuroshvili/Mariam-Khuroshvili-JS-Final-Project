@@ -1,0 +1,97 @@
+@media (max-width: 1024px) {
+    .container2-wrapper {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        row-gap: 50px;
+        -webkit-column-gap: 50px;
+           -moz-column-gap: 50px;
+                column-gap: 50px;
+    }
+    .contact-block {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        row-gap: 50px;
+        -webkit-column-gap: 50px;
+           -moz-column-gap: 50px;
+                column-gap: 50px;
+    }
+}
+@media (max-width: 935px) {
+    .container2 {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column;
+        text-align: center;
+    }
+}
+@media (max-width: 775px) {
+    .container2-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .plant-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-block {
+        width: 80%;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        text-align: center;
+    }
+    .footer {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+}
+    
+@media (max-width:768px) {
+    html {
+        font-size: 55%;
+    }
+    header .navigation {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #262626;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .nav-item {
+        margin: 16px 0;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+}
