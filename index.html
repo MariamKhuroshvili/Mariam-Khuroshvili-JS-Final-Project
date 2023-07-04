@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-    rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -175,26 +174,15 @@
         </div>
     </section>
 
-    <!-- section 5 - Search/Filter -->
+    <!-- section 5 - Search/Filter / dropdown -->
     <section>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for our suggestions..">
-<ul id="myUL">
-  <li><a href="#">Plants</a></li>
-  <li><a href="#">Homeplants</a></li>
-
-  <li><a href="#">Pots</a></li>
-  <li><a href="#">Care</a></li>
-
-  <li><a href="#">Accesories</a></li>
-  <li><a href="#">Gifts</a></li>
-  <li><a href="#">Seeds</a></li>
-</ul>
-    </section>
-
-    <!-- section 6 - Dropdown menu -->
-    <section>
-        <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">PlantArea</button>
+<div class="filter-dropdown">
+    <div class="filter-container">
+        <input type="text" placeholder=" Tell us your desires .." class="filter-input">
+        <div class="output"></div>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">PlantArea Products</button>
             <div id="myDropdown" class="dropdown-content">
                     <a>McDowell</a>
                     <a>Thai Constellation</a>
@@ -208,9 +196,9 @@
                     <a>Jacklyn Alocasia</a>
                     <a>Lyrata Ficus</a>
             </div>
-        </div>
-    </section>
-
+    </div>
+</div>
+  </section>
     <!-- section 6 - Form Validation -->
     <section>
         <div class="contact-block">
@@ -220,35 +208,63 @@
                 </div> 
                 <ul class="contact-ul">
                     <li>
-                        <span>Address:</span>
+                        <span class="contact-span">Address:</span>
                         <a href="https://www.google.com/maps/place/%E1%83%A7%E1%83%95%E1%83%90%E1%83%95%E1%83%98%E1%83%9A%E1%83%94%E1%83%91%E1%83%98%E1%83%A1+%E1%83%91%E1%83%90%E1%83%96%E1%83%A0%E1%83%9D%E1%83%91%E1%83%90/@41.5670877,44.9486826,14z/data=!4m10!1m2!2m1!1splant+shop!3m6!1s0x404407767ceb16d5:0x6fe448de912198e4!8m2!3d41.5670877!4d44.9847315!15sCgpwbGFudCBzaG9wWgwiCnBsYW50IHNob3CSAQdmbG9yaXN04AEA!16s%2Fg%2F11svcw1drk?entry=ttu">Tbilisi, Chavchavadze ave. 43</a>
                     </li>
                     <li>
-                        <span>Mobile:</span>
+                        <span class="contact-span">Mobile:</span>
                         <a href="callto:+0341252525">+0322252525</a>
                     </li>
                     <li>
-                        <span>E-mail:</span>
+                        <span class="contact-span">E-mail:</span>
                         <a href="mailto:name@rapidtables.com?subject=test123">plantarea@yahoo.com</a>
                     </li>
                 </ul>
             </div>
-            <div class="container">
-                <h1 class="label">User Login</h1>
-                <form class="login_form" action="home.html" method="post" name="form" onsubmit="return validated()">
-                    <div class="font">Email or Phone</div>
-                    <input autocomplete="off" type="text" name="email">
-                    <div id="email_error">Please fill up your Email or Phone</div>
-                    <div class="font font2">Password</div>
-                    <input type="password" name="password">
-                    <div id="pass_error">Please fill up your Password</div>
-                    <button type="submit">Login</button>
-                </form>
+            <div class="contact-form">
+                <form action="" id="registration-form" method="post">
+                    <div>
+                      <label class="contact-label" for="username-field"> Username</label>
+                      <input type="text" name="username" id="username-field" />
+                      <p class="error-text" id="error-username"></p>
+                    </div>
+                    <div>
+                      <label class="contact-label" for="password-field"> Password</label>
+                      <input type="password" name="password" id="password-field1" />
+                      <i id="toggleIcon" class="fa-solid fa-eye"></i>
+                      <p class="error-text" id="error-password"></p>
+                    </div>
+                    <div>
+                      <label class="contact-label" for="password-field2"> Repeat Password</label>
+                      <input type="password" name="password2" id="password-field2" />
+                      <p class="error-text" id="error-password2"></p>
+                    </div>
+                    <div>
+                      <label class="contact-label" for="emailField">Email</label>
+                      <input type="email" id="emailField" name="myemail" />
+                      <p id="error-email"></p>
+                    </div>
+                    <div class="numbers">
+                      <input class="radio" type="radio" name="age" id="age1" />
+                      <label class="numbers-label" for="age1">18-30</label>
+                      <input type="radio" name="age" id="age2" />
+                      <label class="numbers-label" for="age2">30-50</label>
+                      <p class="error-text" id="error-age"></p>
+                    </div>
+                    <div>
+                      <input class="contact-label" type="checkbox" name="agree" id="agree" />
+                      <label class="contact-label"  for="agree">I agree terms and conditions</label>
+                      <p class="error-text" id="error-agree"></p>
+                    </div>
+                    <button class="submit-btn" type="submit">Submit Form</button>
+                  </form>
             </div>
+               
+            
         </div>
     </section>
 
-    <!-- section 6 - Dropdown Menu -->
+    <!-- section 7 - slider  -->
     <section class="product"> 
         <button class="pre-btn"><img src="images/arrow.png" alt=""></button>
         <button class="nxt-btn"><img src="images/arrow.png" alt=""></button>
@@ -325,47 +341,65 @@
                     <h2 class="product-brand">easy care set</h2>
                 </div>
             </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/easycare.avif" class="product-thumb" alt="card">
+                    <button class="card-btn">add to list</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">easy care set</h2>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/carekit.avif" class="product-thumb" alt="card">
+                    <button class="card-btn">add to list</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">easy care set</h2>
+                </div>
+            </div>
          </div>   
     </section>
-    
-    <!-- section 5  --> 
+<!-- section 8 - async/await-->
     <section>
-        
-    </section>
+        <div class="async-container">
+          <div class="search-block">
+            <label for="search-field">Our Florists</label>
+            <input type="search" id="search" />
+          </div>
+          <ul id="results" class="ul-item-list"></ul>
+          </div>
+          
+      </section>
+
+    <!-- footer  --> 
     <footer>
         <div class="footer">
             <div class="footer-child ">
+                  
                 <div class="footer-element">
-                    <ul>
-                        <li><a class="header-a" href="#">Home</a></li>
-                        <li><a class="header-a" href="#">About</a></li>
-                        <li><a class="header-a" href="#">Products</a></li>
-                        <li><a class="header-a" href="#">Gifts</a></li>
-                        <li><a class="header-a" href="#">Contact</a></li>
-                    </ul>
-                </div>   
-                <div class="footer-element">
-                   <h4 class="footer-h4">Opening Hours</h4>
-                   <p class="footer-p">Monday: Closed</p>
-                   <p class="footer-p">Tuesday-Saturday: 13:30pm-11:30pm</p>
-                   <p class="footer-p">Sunday: 4:30pm-11:00pm</p>
+                   <h4 class="footer-h4">Frequently asked questions</h4>
+                   <p class="footer-p">Payments</p>
+                   <p class="footer-p">Transport and delivery</p>
+                   <p class="footer-p">Return policy</p>
                 </div>
                 <div class="footer-element">
-                    <h4 class="footer-h4">Take Away</h4>
+                    <h4 class="footer-h4">Do you want us to help you take care of your plants?</h4>
                     <p class="footer-p"> 
-                        <a class="footer-p-a" href="https://menus.preoday.com/the-welcome-chinese#/main/venue/menu">Please select here to see our take away menu</a> 
+                        <a class="footer-p-a" href="https://plnts.com/en/care">Please select here...</a> 
                     </p>
                 </div>
                 <div class="footer-element">
                     <h4 class="footer-h4">Contact Us</h4>
-                    <p class="footer-p"> <i class="fa-sharp fa-solid fa-location-dot"></i>
-                        Cambridgeshire street, 2-4 east, St. Ives.
+                    <p class="footer-p">
+                        Tbilisi, Chavchavadze ave. 43
                     </p>
-                    <p class="footer-p"> <i class="fa-solid fa-phone"></i>
-                        +788 222 222
+                    <p class="footer-p">
+                        +0322252525
                     </p>
-                    <p class="footer-p"> <i class="fa-sharp fa-regular fa-envelopes-bulk"></i>
-                        soulofasia@gmail.com
+                    <p class="footer-p">
+                        plantarea@yahoo.com
                     </p>
                 </div>
             </div>
@@ -373,5 +407,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="people.json"></script>
 </body>
 </html>
