@@ -101,11 +101,9 @@ let cookieBox = document.querySelector(".wrapper"),
       if(document.cookie) { 
         cookieBox.classList.add("click"); 
       } else { 
-        alert("Cookie can't be set!");
-      }
-    };
- 
-
+              alert("cookies can not be set");
+            }
+          };
 
     // Search/Filter //
     function myFunction() {
@@ -127,7 +125,6 @@ let cookieBox = document.querySelector(".wrapper"),
           }
         }
       }
-
 
     // Dropdown Menu //
 function myFunction() {
